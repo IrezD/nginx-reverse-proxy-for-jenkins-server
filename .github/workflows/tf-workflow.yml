@@ -30,7 +30,7 @@ jobs:
       with:
         role-to-assume: arn:aws:iam::806066816337:role/OIDC-workflow-for-Nginx-reverse-proxy-Jenkins-repo
         role-session-name: OIDC-workflow-for-Nginx-reverse-proxy-Jenkins-repo
-        aws-region: eu-central-1
+        aws-region: ${{ secrets.AWS_REGION }}
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
@@ -49,4 +49,5 @@ jobs:
       uses: dflook/terraform-apply@v1
       with:
           path: ./terraform
+          backend_config_file: ./terraform/config.tfbackend
           auto_approve: true

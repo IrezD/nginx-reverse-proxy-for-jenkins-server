@@ -14,10 +14,7 @@ jobs:
     name: 'Terraform'
     runs-on: ubuntu-latest
     environment: production
-    env:
-      KEY_PAIR: ${{ secrets.KEY_PAIR }}
 
-    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
         shell: bash
@@ -34,18 +31,20 @@ jobs:
         role-session-name: OIDC-workflow-for-Nginx-reverse-proxy-Jenkins-repo
         aws-region: ${{ secrets.AWS_REGION }}
 
-    # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
+ 
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
       with:
         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
-    # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
+
     - name: terraform plan
       uses: dflook/terraform-plan@v1
       with:
         path: ./terraform
         backend_config_file: ./terraform/config.tfbackend
+        variables: |
+          key_pair_id: ${{ secrets.KEY_PAIR }}
     
     - name: terraform apply
       uses: dflook/terraform-apply@v1
@@ -53,3 +52,5 @@ jobs:
           path: ./terraform
           backend_config_file: ./terraform/config.tfbackend
           auto_approve: true
+          variables: |
+            key_pair_id: ${{ secrets.KEY_PAIR }}

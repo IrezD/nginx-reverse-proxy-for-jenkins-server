@@ -43,8 +43,8 @@ jobs:
       with:
         path: ./terraform
         backend_config_file: ./terraform/config.tfbackend
-        variables: |
-          key_pair_id = ${{ secrets.KEY_PAIR }}
+        # variables: |
+        #   key_pair_id = ${{ secrets.KEY_PAIR }}
     
     - name: terraform apply
       uses: dflook/terraform-apply@v1
@@ -52,5 +52,5 @@ jobs:
           path: ./terraform
           backend_config_file: ./terraform/config.tfbackend
           auto_approve: true
-          variables: |
-            key_pair_id = ${{ secrets.KEY_PAIR }}
+          # variables: |
+          #   key_pair_id = ${{ secrets.KEY_PAIR }}

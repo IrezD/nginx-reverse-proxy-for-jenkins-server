@@ -14,6 +14,8 @@ jobs:
     name: 'Terraform'
     runs-on: ubuntu-latest
     environment: production
+    env:
+      KEY_PAIR: ${{ secrets.KEY_PAIR }}
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:

@@ -12,3 +12,8 @@ variable "aws-region" {
   default = "eu-central-1"
   description = "Selected AWS region"
 }
+
+variable "key_pair_id" {
+  description = "Key Pair for Ec2 Instance"
+}
+

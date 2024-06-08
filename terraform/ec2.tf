@@ -18,8 +18,15 @@ data "aws_ami" "ubuntu" {
 resource "aws_instance" "jenkins-server" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
+  key_name = data.aws_key_pair.key_pair.key_pair_id
 
   tags = {
     Name = "Jenkins_Server"
   }
+  
+}
+
+data "aws_key_pair" "key_pair" {
+  key_pair_id = var.key_pair_id
+
 }

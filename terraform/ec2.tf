@@ -20,6 +20,6 @@ resource "aws_instance" "jenkins-server" {
   instance_type = var.instance_type
 
   tags = {
-    Name = "Jenkins"
+    Name = "Jenkins_Server"
   }
 }

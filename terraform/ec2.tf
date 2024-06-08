@@ -25,8 +25,3 @@ resource "aws_instance" "jenkins-server" {
   }
   
 }
-
-# data "aws_key_pair" "key_pair" {
-#   key_pair_id = "key-039e87af1b3a3f3dc"
-
-# }

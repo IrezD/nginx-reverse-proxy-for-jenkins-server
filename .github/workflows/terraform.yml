@@ -23,13 +23,14 @@ jobs:
     steps:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v4 
 
     - name: configure aws credentials
       uses: aws-actions/configure-aws-credentials@v3
       with:
         role-to-assume: arn:aws:iam::806066816337:role/OIDC-workflow-for-Nginx-reverse-proxy-Jenkins-repo
         role-session-name: OIDC-workflow-for-Nginx-reverse-proxy-Jenkins-repo
+        aws-region: eu-central-1
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform

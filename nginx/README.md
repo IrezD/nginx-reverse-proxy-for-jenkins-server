@@ -2,11 +2,11 @@
 This configuration file to be stored in **/etc/nginx/sites-available/** directory
 
 ## Remove default config file
-Navigate to **/etc/nginx/sites-enable/** <br>
+Navigate to **/etc/nginx/sites-enabled/** <br>
 **run:**  _sudo unlink default_
 
-## Create a Symbolic link for the custom config file (Jenkins.conf)
-**run:** _sudo ln -s /etc/nginx/sites-available/ /etc/nginx/sites-enable_
+## Create a Symbolic link for the custom jenkins.conf file
+**run:** _sudo ln -s /etc/nginx/sites-available/ /etc/nginx/sites-enabled_
 
 ## Verify configuration
 **run:** _sudo nginx -t_

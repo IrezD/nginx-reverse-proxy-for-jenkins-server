@@ -43,7 +43,7 @@ jobs:
       with:
         path: ./terraform
         backend_config_file: ./terraform/config.tfbackend
-        var_file: domain.tfvars
+        var_file: ./terraform/domain.tfvars
         variables: |
           vpc_id = "${{ secrets.VPC_ID }}"
     
@@ -53,6 +53,6 @@ jobs:
           path: ./terraform
           backend_config_file: ./terraform/config.tfbackend
           auto_approve: true
-          var_file: domain.tfvars
+          var_file: ./terraform/domain.tfvars
           variables: |
             vpc_id = "${{ secrets.VPC_ID }}"

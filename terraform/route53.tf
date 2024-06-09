@@ -1,6 +1,5 @@
 data "aws_route53_zone" "hosted_zone" {
   name         = "dennisowie.com."
-  private_zone = true
 }
 
 resource "aws_route53_record" "jenkins_record" {

@@ -1,5 +1,5 @@
 # Configuration Details
-Move the 'jenkins.conf' file to **/etc/nginx/sites-available/** directory using command below:
+Move the 'jenkins.conf' file to **/etc/nginx/sites-available/** directory using command below: <br>
 **run:** _sudo scp nginx-reverse-proxy-for-jenkins-server/nginx/jenkins.conf /etc/nginx/sites-available/_
 
 ## Remove default config file

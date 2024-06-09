@@ -2,7 +2,7 @@
 
 sudo apt update
 
-sudo apt install nginx
+sudo apt install nginx -y
 
 echo "Nginx installed successfully. Prepararing for Jenkins installation next.."
 

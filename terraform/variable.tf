@@ -16,3 +16,9 @@ variable "aws-region" {
 variable "vpc_id" {
   description = "The ID for existing VPC"
 }
+
+variable "jenkins_domain" {
+  description = "subdomain name for jenkins"
+  type = string
+}
+

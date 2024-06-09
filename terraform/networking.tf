@@ -1,4 +1,4 @@
-resource "aws_security_group" "allow_tls" {
+resource "aws_security_group" "allow_ssh" {
   name        = "allow ssh"
   description = "exposing port 22 to allow remote connection to instance"
   vpc_id      = var.vpc_id

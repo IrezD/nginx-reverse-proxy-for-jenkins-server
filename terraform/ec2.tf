@@ -19,6 +19,7 @@ resource "aws_instance" "jenkins-server" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
   key_name = "EKS Key_pair"
+  security_groups = [aws_security_group.allow_ssh.id]
 
   tags = {
     Name = "Jenkins_Server"

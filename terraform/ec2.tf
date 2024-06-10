@@ -20,9 +20,9 @@ resource "aws_instance" "jenkins-server" {
   instance_type          = var.instance_type
   key_name               = "EKS Key_pair"
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
-  
+
   ebs_block_device {
-    device_name = "/dev/xvda"
+    device_name = "/dev/sda1"
     volume_size = 25
   }
 

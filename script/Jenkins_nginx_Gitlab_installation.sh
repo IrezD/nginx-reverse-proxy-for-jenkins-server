@@ -23,7 +23,20 @@ sudo apt update
 
 sudo apt install jenkins -y
 
+echo "Jenkins has been installed successfully! Installing GitLab next.."
+
+sudo apt-get update
+
+sudo apt-get install -y curl openssh-server ca-certificates tzdata perl
+
+sudo apt-get install -y postfix
+
+curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
+
+
+sudo EXTERNAL_URL="https://gitlab.dennisowie.com" apt-get install gitlab-ee
+
 sudo systemctl status jenkins
 
-echo "Jenkins has been installed successfully! If it is not in a running state, run 'sudo systemctl enable --now jenkins'."
+echo "Script has was successfully ran! If Jenkins is not in a running state, run 'sudo systemctl enable --now jenkins'."
 

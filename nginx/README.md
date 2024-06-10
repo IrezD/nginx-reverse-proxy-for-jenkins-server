@@ -1,15 +1,10 @@
-# Configuration Details
-From the home directory Copy the 'jenkins.conf' file to **/etc/nginx/sites-available/** directory using command below: <br><br>
-**run:** _sudo scp nginx-reverse-proxy-for-jenkins-server/nginx/jenkins.conf /etc/nginx/sites-available/_
+# Info
 
-## Remove default config file in site-enabled directory
-**run:**  _sudo unlink /etc/nginx/sites-enabled/default_
+Before running this script, ensure to first have Nginx and Jenkins installed. <br>
 
-## Create a Symbolic link for the custom jenkins.conf file
-**run:** _sudo ln -s /etc/nginx/sites-available/jenkins.conf /etc/nginx/sites-enabled_
+The Bash script copies the _jenkins.conf_ file into the nginx **site-available/** directory and configure Nginx to use the custom configuration file.
 
-## Verify configuration
-**run:** _sudo nginx -t_
+## Command to run scripts:
+**run:** "sudo chmod +x bash_script.sh <br><br>
+**run:** "./bash_script.sh"
 
-## Reload Nginx service
-**run:** _sudo systemctl reload nginx_

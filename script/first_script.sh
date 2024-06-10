@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Run this script to install Nginx and Jenkins
+
 sudo apt update
 
 sudo apt install nginx -y
@@ -22,19 +24,6 @@ sudo apt install -y gnupg2
 sudo apt update
 
 sudo apt install jenkins -y
-
-echo "Jenkins has been installed successfully! Installing GitLab next.."
-
-sudo apt-get update
-
-sudo apt-get install -y curl openssh-server ca-certificates tzdata perl
-
-sudo apt-get install -y postfix
-
-curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
-
-
-sudo EXTERNAL_URL="https://gitlab.dennisowie.com" apt-get install gitlab-ee
 
 sudo systemctl status jenkins
 

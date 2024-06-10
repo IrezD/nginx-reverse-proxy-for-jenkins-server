@@ -1,5 +1,5 @@
 # Configuration Details
-Copy the 'jenkins.conf' file to **/etc/nginx/sites-available/** directory using command below: <br><br>
+From the home directory Copy the 'jenkins.conf' file to **/etc/nginx/sites-available/** directory using command below: <br><br>
 **run:** _sudo scp nginx-reverse-proxy-for-jenkins-server/nginx/jenkins.conf /etc/nginx/sites-available/_
 
 ## Remove default config file in site-enabled directory

@@ -18,7 +18,10 @@ variable "vpc_id" {
 }
 
 variable "jenkins_domain" {
-  description = "subdomain name for jenkins"
+  description = "subdomain name for Jenkins"
   type        = string
 }
 
+variable "gitlab_domain" {
+  description = "subdomain name for Gitlab"
+}

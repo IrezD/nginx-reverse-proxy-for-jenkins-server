@@ -6,7 +6,7 @@ pipeline {
                 sh 'git pull https://github.com/IrezD/nginx-reverse-proxy-for-jenkins-server'
                 sh 'ls'
                 sh 'mkdir -p /var/www/'
-                sh 'mv * /var/www/'
+                sh 'sudo mv * /var/www/'
             }
         }
     }

@@ -1,4 +1,4 @@
-# nginx-reverse-proxy-for-jenkins-server
+# nginx-reverse-proxy-for-jenkins-server-and-gitlab
 This project demonstrate deploying Jenkins server and GitLab instance behind Nginx as reverse proxy on EC2 Ubuntu server.
 
 ## Jenkins 

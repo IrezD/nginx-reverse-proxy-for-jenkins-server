@@ -1,3 +1,7 @@
+resource "aws_ec2_instance_state" "instance_state" {
+  instance_id = aws_instance.server.id
+  state       = "stopped"
+}
 
 data "aws_ami" "ubuntu" {
   most_recent = true
@@ -15,7 +19,7 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"]
 }
 
-resource "aws_instance" "jenkins-server" {
+resource "aws_instance" "server" {
   ami                    = data.aws_ami.ubuntu.id
   instance_type          = var.instance_type
   key_name               = "EKS Key_pair"
@@ -23,11 +27,11 @@ resource "aws_instance" "jenkins-server" {
 
   ebs_block_device {
     device_name = "/dev/sda1"
-    volume_size = 25
+    volume_size = 30
   }
 
   tags = {
-    Name = "Jenkins_Server"
+    Name = "Server"
   }
 
 }

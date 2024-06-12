@@ -1,6 +1,6 @@
 variable "instance_type" {
   description = "Defined the EC2 instance type"
-  default     = "t2.micro"
+  default     = "t2.large"
 }
 
 variable "ami-os" {

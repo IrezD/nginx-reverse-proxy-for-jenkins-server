@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'git --version'
+                echo "I think I have figured this one out now"
             }
         }
     }

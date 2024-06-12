@@ -2,7 +2,7 @@
 
 # Run this script to install Gitlab
 
-sudo apt update && sudo apt install docker.io
+sudo apt update && sudo apt install docker.io -y
 
 sudo mkdir -p /srv/gitlab && export GITLAB_HOME=/srv/gitlab
 

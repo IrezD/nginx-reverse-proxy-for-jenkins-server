@@ -25,6 +25,11 @@ sudo apt update
 
 sudo apt install jenkins -y
 
+sudo vi /lib/systemd/system/jenkins.service 
+
+sudo systemctl restart jenkins && sudo systemctl daemon-reload
+sudo systemctl stop jenkins && sudo systemctl start jenkins
+
 sudo systemctl status jenkins
 
 echo "Script has was successfully ran! If Jenkins is not in a running state, run 'sudo systemctl enable --now jenkins'."

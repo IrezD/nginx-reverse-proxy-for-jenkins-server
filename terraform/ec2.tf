@@ -1,6 +1,6 @@
 resource "aws_ec2_instance_state" "instance_state" {
   instance_id = aws_instance.server.id
-  state       = "stopped"
+  state       = "running"
 }
 
 data "aws_ami" "ubuntu" {

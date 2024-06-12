@@ -6,9 +6,9 @@ pipeline {
                 sh 'git pull https://github.com/IrezD/nginx-reverse-proxy-for-jenkins-server'
                 sh 'ls'
                 sh 'mkdir -p /var/www/'
-                sh 'cd var'
+                cd var/
                 sh 'chown -R root:www/'
-                sh 'cd ..'
+                cd ..
                 sh 'cp -R * /var/www/'
                 sh 'ls /var/www/'
             }

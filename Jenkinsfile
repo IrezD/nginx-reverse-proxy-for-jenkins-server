@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                echo "I think I have figured this one out now"
+                git pull https://github.com/IrezD/nginx-reverse-proxy-for-jenkins-server
+                mkdir /var/www/
+                mv . /var/www
             }
         }
     }

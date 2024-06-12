@@ -9,7 +9,7 @@ pipeline {
                 cd var/
                 sh 'chown -R root:www/'
                 cd ..
-                sh 'cp -R * /var/www/'
+                cp -R * /var/www/
                 sh 'ls /var/www/'
             }
         }

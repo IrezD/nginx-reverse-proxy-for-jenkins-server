@@ -47,12 +47,21 @@ jobs:
         variables: |
           vpc_id = "${{ secrets.VPC_ID }}"
     
-    - name: terraform apply
-      uses: dflook/terraform-apply@v1
+    # - name: terraform apply
+    #   uses: dflook/terraform-apply@v1
+    #   with:
+    #       path: ./terraform
+    #       backend_config_file: ./terraform/config.tfbackend
+    #       auto_approve: true
+    #       var_file: ./terraform/domain.tfvars
+    #       variables: |
+    #         vpc_id = "${{ secrets.VPC_ID }}"
+
+    - name: terraform destroy
+      uses: dflook/terraform-destroy@v1
       with:
           path: ./terraform
           backend_config_file: ./terraform/config.tfbackend
-          auto_approve: true
           var_file: ./terraform/domain.tfvars
           variables: |
             vpc_id = "${{ secrets.VPC_ID }}"
